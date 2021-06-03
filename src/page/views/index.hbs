@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headtag}}
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="home-container">
+        {{>navBar}}
+
+        <!-- main content -->
+
+        <div class="main">
+            <div class="left-content">
+                <p class="content-headding">Welcome to weather App</p>
+                <h1>Get The Latest <span>weather</span> Info Of Your City</h1>
+                <button href="/weather">CLICK NOW</button>
+            </div>
+            <div class="right-Content">
+                <div class="img-container">
+                    <img src="images/season_change.svg" alt="image container" />
+                </div>
+            </div>
+        </div>
+        {{>footer}}
+    </div>
+</body>
+
+</html>

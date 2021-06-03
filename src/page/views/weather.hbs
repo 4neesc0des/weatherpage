@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headtag}}
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="home-container">
+        {{>navBar}}
+
+        <!-- main content -->
+
+        <div class="weather_main">
+            <div class="weather-content">
+                <form class="temp-form">
+                    <input type="text" id="cityName" placeholder="search Here" autocomplete="off">
+                    <input type="submit" value="search" id="submitBtn">
+                </form>
+            </div>
+            <div class="temp-info">
+                <div class="top_layer">
+                    <p id="day">Tuesday</p>
+                    <p id="date">31st May</p>
+                </div>
+                <div class="main_layer ">
+                    <p id="city_name">Search Your City</p>
+                    <div id="main_info" class="data_hide">
+                        <div class="weather_info ">
+                            <p id="temp"> <span>0</span> <sup>o</sup>C </p>
+                            <p id="temp-icon"></p>
+                        </div>
+                        <p id="temp_mood">Clear</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- footer content -->
+
+        {{>footer}}
+
+
+        <script src="js/main.js"></script>
+    </div>
+</body>
+
+</html>

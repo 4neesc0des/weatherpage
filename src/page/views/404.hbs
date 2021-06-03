@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headtag}}
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="home-container">
+        {{>navBar}}
+
+        <!-- main content -->
+
+        <div class="main errorContainer">
+            <img src="images/404.svg" alt="" class="error-img">
+            <div class="left-content errorContent">
+                <p class="content-headding">Welcome to Mausam App</p>
+                <h1>{{errorMsg}}</h1>
+                <a href="/"><button >Go Back</button></a>
+            </div>
+        </div>
+
+        <!-- footer content -->
+
+        {{>footer}}
+    </div>
+</body>
+
+</html>
