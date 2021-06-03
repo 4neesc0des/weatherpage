@@ -6,3 +6,10 @@
     </div>
     <p class="copyright">© 2021 Anish kuar@The Joker</p>
 </footer>
+<script>
+    const toggle = document.querySelector(".nav-toggle");
+    const ulist = document.querySelector(".ulist");
+    toggle.addEventListener("click", () => {
+        ulist.classList.toggle("active");
+    });
+</script>

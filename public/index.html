@@ -21,22 +21,27 @@
 
   <body>
     <div class="home-container">
-      <nav>
-        <div class="logo">
-          <a href="/weather" class="logo"
-            ><span><i class="far fa-snowflake"></i></span>Mausam<span
-              ><i class="far fa-snowflake"></i></span
-          ></a>
-        </div>
-        <div class="nav-items">
-          <ul>
-            <li><a href="/">Home</a></li>
-                    <li><a href="/weather">Weather</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-holder">
+        <nav>
+          <div class="logo">
+            <a href="home" class="logo"
+              ><span><i class="far fa-snowflake"></i></span>Mausam<span
+                ><i class="far fa-snowflake"></i></span
+            ></a>
+          </div>
+          <div class="nav-items">
+            <ul class="ulist">
+              <li><a href="/">Home</a></li>
+              <li><a href="/weather">Weather</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <button class="nav-toggle" name="button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
 
       <!-- main content -->
 
@@ -52,7 +57,12 @@
           </div>
         </div>
       </div>
-      <footer>
+      
+
+      
+    </div>
+
+    <footer>
         <div class="social-icons">
           <a
             class="footer-link"
@@ -76,6 +86,13 @@
         </div>
         <p class="copyright">© 2021 Anish kuar@The Joker</p>
       </footer>
-    </div>
+
+      <script>
+        const toggle = document.querySelector(".nav-toggle");
+        const ulist = document.querySelector(".ulist");
+        toggle.addEventListener("click", () => {
+          ulist.classList.toggle("active");
+        });
+      </script>
   </body>
 </html>

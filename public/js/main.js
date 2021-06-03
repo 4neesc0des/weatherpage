@@ -106,3 +106,7 @@ window.addEventListener("load", getCurrentDay);
 //  {
 //    weekday[currentTime.getDay()];
 //  }
+
+
+
+// toggle

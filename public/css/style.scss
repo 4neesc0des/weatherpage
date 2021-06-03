@@ -2,7 +2,8 @@ $primeBg: #044;
 $primeText: #ddd;
 $primeWhite: #fff;
 $secondarycolor: rgb(84, 190, 190);
-$primeFont: "Nunito", sans-serif;
+$primeFont: "Nunito",
+sans-serif;
 $primefontweight: 400;
 $boldfontweight: 700;
 $primeTransition : all 0.3s ease-in;
@@ -15,6 +16,14 @@ $primeTransition : all 0.3s ease-in;
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
 }
 
 a {
@@ -30,9 +39,36 @@ a {
 
 .home-container {
   width: 100%;
-  height: 100vh;
   background: $primeWhite;
   position: relative;
+
+  .navbar-holder {
+    position: relative;
+
+    .nav-toggle {
+
+      outline: none;
+      border: none;
+      width: 4rem;
+      height: 4rem;
+      background-color: transparent;
+      display: none;
+      transition: $primeTransition;
+
+      i {
+        background-color: #044;
+        color: #ddd;
+        font-size: 2.2rem;
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+
+
+
+  }
 
   nav {
     width: 100%;
@@ -57,6 +93,8 @@ a {
       }
     }
 
+
+
     ul {
       list-style: none;
       @include dispflx;
@@ -71,6 +109,7 @@ a {
         transition: $primeTransition;
         padding: 0.4rem 1rem;
         border-radius: 0.6rem;
+
         &:hover {
           background: $secondarycolor;
           color: $primeWhite;
@@ -84,6 +123,7 @@ a {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -94,14 +134,14 @@ a {
 .main {
   @include dispflx;
   width: 100%;
+  padding: 5rem 10rem;
   height: calc(100vh - 4rem);
-  padding: 0 10rem;
 
-  &.errorContainer{
+  &.errorContainer {
     flex-direction: column;
   }
 
-  .error-img{
+  .error-img {
     width: 70%;
     height: 50%;
     object-fit: contain;
@@ -118,38 +158,41 @@ a {
     font-family: $primeFont;
     font-weight: $boldfontweight;
     color: #111;
-    &.errorContent{
+
+    &.errorContent {
       align-items: center;
     }
 
     p {
       font-size: 1.8rem;
-       
+
     }
+
     h1 {
       font-size: 3.2rem;
-      span{
+
+      span {
         color: #044;
       }
     }
 
-    button{
-        width: 15rem;
-        outline: none;
-        border-radius: 1.3rem;
-        border: none;
-        color: #ddd;
-        background: $primeBg;
-        padding: 1.2rem 0;
-        margin-top: 4rem;
-        font-size: 1.8rem;
-        transition: $primeTransition;
-        cursor: pointer;
+    button {
+      width: 15rem;
+      outline: none;
+      border-radius: 1.3rem;
+      border: none;
+      color: #ddd;
+      background: $primeBg;
+      padding: 1.2rem 0;
+      margin-top: 4rem;
+      font-size: 1.8rem;
+      transition: $primeTransition;
+      cursor: pointer;
 
-        &:hover{
-            background: $secondarycolor;
-            color: $primeWhite;
-        }
+      &:hover {
+        background: $secondarycolor;
+        color: $primeWhite;
+      }
     }
   }
 
@@ -160,8 +203,8 @@ a {
     @include dispflx;
 
     .img-container {
-      width: 80%;
-      height: 80%;
+      width: 500px;
+      height: 400px;
       overflow: hidden;
 
       img {
@@ -170,60 +213,64 @@ a {
         object-fit: fill;
       }
 
-      .about-img{
-      object-fit: cover;
-      height: 80%;
-      // border-radius: 40%;
+      .about-img {
+        object-fit: cover;
+        height: 80%;
+        // border-radius: 40%;
       }
     }
   }
 }
 
 
-footer{
-    @include dispflx;
-    flex-direction: column;
-    font-family: $primeFont;
-    font-weight: $boldfontweight;
-    color: #ddd;
-    background: $primeBg;
-    padding: 2rem 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+footer {
+  @include dispflx;
+  flex-direction: column;
+  font-family: $primeFont;
+  font-weight: $boldfontweight;
+  color: #ddd;
+  background: $primeBg;
+  padding: 2rem 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-top: auto;
 
-    p {
-      font-size: 1.2rem;
-     
+  p {
+    font-size: 1.2rem;
+  }
+
+  .social-icons {
+    margin-bottom: 1rem;
+
+    a {
+      color: $secondarycolor;
+      transition: $primeTransition;
+      padding: 0.4rem 1rem;
+      border-radius: 0.6rem;
+
+      &:hover {
+        background: $secondarycolor;
+        color: $primeWhite;
+      }
     }
-    .social-icons{
-        margin-bottom: 1rem;
-        a{
-        color: $secondarycolor;
-        transition: $primeTransition;
-        padding: 0.4rem 1rem;
-        border-radius: 0.6rem;
-        &:hover {
-          background: $secondarycolor;
-          color: $primeWhite;
-        }
-    }
-    }
-    
+  }
+
 
 }
 
-.weather_main{
+.weather_main {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
-  .weather-content{
 
-    .temp-form{
+  .weather-content {
+
+    .temp-form {
       position: relative;
 
-      #cityName{
+      #cityName {
         width: 45rem;
         height: 4rem;
         outline: none;
@@ -236,15 +283,17 @@ footer{
         font-size: 1.8rem;
         font-weight: $boldfontweight;
         transition: $primeTransition;
-        &::placeholder{
+
+        &::placeholder {
           color: #fff;
         }
-        &:focus{
+
+        &:focus {
           background: #044;
         }
       }
 
-      #submitBtn{
+      #submitBtn {
         position: absolute;
         top: 0;
         right: 0;
@@ -261,11 +310,13 @@ footer{
       }
     }
   }
-.data_hide{
-  visibility: hidden;
-  transition: $primeTransition;
-}
-  .temp-info{
+
+  .data_hide {
+    visibility: hidden;
+    transition: $primeTransition;
+  }
+
+  .temp-info {
     width: 45rem;
     height: 25rem;
     background-color: #111;
@@ -276,7 +327,7 @@ footer{
     flex-direction: column;
     padding: 2rem;
 
-    .top_layer{
+    .top_layer {
       @include dispflx;
       justify-content: space-between;
       font-size: 1.8rem;
@@ -284,42 +335,142 @@ footer{
       font-weight: $boldfontweight;
     }
 
-    .main_layer{
+    .main_layer {
       display: flex;
       flex-direction: column;
       font-family: $primeFont;
       font-weight: $boldfontweight;
-      
-      #city_name{
+
+      #city_name {
         font-size: 3rem;
         padding-top: 2rem;
       }
 
-      .weather_info{
+      .weather_info {
         display: flex;
         justify-content: space-between;
-        #temp{
+
+        #temp {
           font-size: 3.6rem;
           margin-top: 3rem;
         }
-        #temp-icon{
+
+        #temp-icon {
           font-size: 5rem;
           margin-top: 1rem;
         }
       }
-        
-        
+
+
     }
   }
 
 }
 
-#temp_mood{
-          font-size: 3rem;
+#temp_mood {
+  font-size: 3rem;
 }
 
-.data_hide{
+.data_hide {
   visibility: hidden;
   transition: $primeTransition;
 }
 
+@media (max-width:900px) {
+  .main {
+    @include dispflx;
+    flex-direction: column;
+
+    .left-content {
+      margin-top: 1rem;
+      width: 100%;
+      height: 50%;
+      @include dispflx;
+
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        padding: 1.2rem 0;
+        margin-top: 3rem;
+      }
+    }
+
+    .right-Content {
+      width: 100%;
+      overflow: hidden;
+      @include dispflx;
+
+      .img-container {
+        width: 500px;
+        height: 370px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: fill;
+        }
+
+      }
+    }
+
+  }
+}
+
+@media (max-width:670px) {
+  .nav-toggle {
+    display: block !important;
+  }
+
+  ul {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 0rem;
+    align-items: flex-start !important;
+    width: 100% !important;
+    display: none !important;
+
+    li {
+      width: 100%;
+      background-color: $primeBg;
+      color: #fff;
+      padding: 1rem;
+      transition: $primeTransition;
+
+      a {
+        color: #fff !important;
+
+      }
+
+      &:hover {
+        background-color: $secondarycolor;
+      }
+    }
+
+    &.active {
+      display: flex !important;
+    }
+  }
+
+  nav {
+    padding: 0 2rem !important;
+  }
+}
+
+@media (max-width:600px) {
+  .main{
+    padding: 2rem 5rem;
+  }
+  h1 {
+    font-size: 2.6rem !important;
+  }
+  p{
+    text-align: center;
+  }
+  .main .left-content button{
+    margin-top: 1rem;
+  }
+}

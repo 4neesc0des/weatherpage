@@ -21,40 +21,55 @@
 
   <body>
     <div class="home-container">
-      <nav>
-        <div class="logo">
-          <a href="home" class="logo"
-            ><span><i class="far fa-snowflake"></i></span>Mausam<span
-              ><i class="far fa-snowflake"></i></span
-          ></a>
-        </div>
-        <div class="nav-items">
-          <ul>
-           <li><a href="/">Home</a></li>
-                    <li><a href="/weather">Weather</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="navbar-holder">
+        <nav>
+          <div class="logo">
+            <a href="home" class="logo"
+              ><span><i class="far fa-snowflake"></i></span>Mausam<span
+                ><i class="far fa-snowflake"></i></span
+            ></a>
+          </div>
+          <div class="nav-items">
+            <ul class="ulist">
+              <li><a href="/">Home</a></li>
+              <li><a href="/weather">Weather</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <button class="nav-toggle" name="button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
 
       <!-- main content -->
 
       <div class="main">
         <div class="right-Content">
           <div class="img-container">
-            <img src="images/img-18.jpg" class="about-img" alt="image container" />
+            <img
+              src="images/img-18.jpg"
+              class="about-img"
+              alt="image container"
+            />
           </div>
         </div>
         <div class="left-content">
           <p class="content-headding">Welcome to Weather App</p>
-          <h1>I Am A <span>Mern Stack Devloper.</span> Student And A FreeLancer</h1>
-          <button href="https://www.linkedin.com/in/anish-kuar-44686819b/" target= "_blank">CLICK NOW</button>
+          <h1>
+            I Am A <span>Mern Stack Devloper.</span> Student And A FreeLancer
+          </h1>
+          <button
+            href="https://www.linkedin.com/in/anish-kuar-44686819b/"
+            target="_blank"
+          >
+            CLICK NOW
+          </button>
         </div>
-        
       </div>
 
-<!-- footer content -->
+      <!-- footer content -->
 
       <footer>
         <div class="social-icons">
@@ -80,6 +95,14 @@
         </div>
         <p class="copyright">© 2021 Anish kuar@The Joker</p>
       </footer>
+
+      <script>
+        const toggle = document.querySelector(".nav-toggle");
+        const ulist = document.querySelector(".ulist");
+        toggle.addEventListener("click", () => {
+          ulist.classList.toggle("active");
+        });
+      </script>
     </div>
   </body>
 </html>
