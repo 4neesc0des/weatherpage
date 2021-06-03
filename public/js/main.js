@@ -17,7 +17,7 @@ const getInfo = async (e) => {
     // weather_info.
   } else {
     try {
-      let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=28b450121710fefac642162db845de46`;
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=28b450121710fefac642162db845de46`;
       let data = await fetch(url);
       let result = await data.json();
       // console.log(result);
@@ -29,7 +29,7 @@ const getInfo = async (e) => {
 
       const tempStatus = arrData[0].weather[0].main;
       if (tempStatus === "Clear") {
-        tempicon.innerHTML = `<i class="fa fa-moon"></i>`;
+        tempicon.innerHTML = `<i class="fa fa-sun" style="color:Orange;"></i>`;
       } else if (tempStatus === "Clouds") {
         tempicon.innerHTML = `<i class="fa fa-cloud"></i>`;
       } else if (tempStatus === "Rain") {
