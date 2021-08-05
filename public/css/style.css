@@ -4,10 +4,11 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  height: 100%; }
 
 body {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   width: 100%; }
@@ -85,12 +86,11 @@ a {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 5rem 10rem;
-  height: calc(100vh - 4rem); }
+  padding: 5rem 10rem; }
   .main.errorContainer {
     flex-direction: column; }
   .main .error-img {
-    width: 70%;
+    width: 40%;
     height: 50%;
     object-fit: contain; }
   .main .left-content {
@@ -156,9 +156,7 @@ footer {
   color: #ddd;
   background: #044;
   padding: 2rem 0;
-  position: absolute;
   width: 100%;
-  bottom: 0;
   margin-top: auto; }
   footer p {
     font-size: 1.2rem; }
@@ -176,8 +174,7 @@ footer {
 .weather_main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 5rem; }
+  justify-content: flex-start; }
   .weather_main .weather-content .temp-form {
     position: relative; }
     .weather_main .weather-content .temp-form #cityName {

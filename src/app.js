@@ -1,22 +1,20 @@
-const  express = require('express');
+const express = require("express");
 const App = express();
-const  port = process.env.PORT || 3000;
-const  path = require('path')
-const hbs = require('hbs');
-
+const port = process.env.PORT || 3000;
+const path = require("path");
+const hbs = require("hbs");
 
 App.set("view engine", "hbs");
 //adding stattic path
 // console.log(__dirname);
 
-hbs.registerPartials(path.join(__dirname,"./page/common"))
-App.use(express.static(path.join(__dirname, "../public")))
-App.set('views', "./src/page/views")
-
+hbs.registerPartials(path.join(__dirname, "../src/page/common"));
+App.use(express.static(path.join(__dirname, "../public")));
+App.set("views", "./src/page/views"); //this is correct
 
 //routing
-App.get("/", (req, res)=>{
-res.send("index");
+App.get("/", (req, res) => {
+  res.render("index");
 });
 
 App.get("/about", (req, res) => {
@@ -27,13 +25,12 @@ App.get("/weather", (req, res) => {
   res.render("weather");
 });
 
-App.get("*", (req, res)=>{
-    res.render("404",{
-      errorMsg: 'Opps! page Not found'
-    })
-})
+App.get("*", (req, res) => {
+  res.render("404", {
+    errorMsg: "Opps! page Not found",
+  });
+});
 
-
-App.listen(port,()=>{
-console.log(`it is working! and listening at port number ${port}.`);
+App.listen(port, () => {
+  console.log(`it is working! and listening at port number ${port}.`);
 });
